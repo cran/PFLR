@@ -10,8 +10,8 @@ ngr(
   M,
   d,
   domain,
-  extra = list(alphaPS = exp(seq(-20, 20, len = 20)), kappa = exp(seq(-10, 10, len = 8)),
-    tau = exp(seq(-50, -10, len = 8)), gamma = 0.5, niter = 100)
+  extra = list(alphaPS = 10^(-10:0), kappa = 10^(-(9:7)), tau = exp(seq(-50, -15, len =
+    20)), gamma = 0.5, niter = 100)
 )
 }
 \arguments{
@@ -27,9 +27,9 @@ ngr(
 
 \item{extra}{List containing other parameters which have defaults:
 \itemize{
-  \item alphaPs: Smoothing parameter for the Penalized B-splines method, default is exp(seq(-20,20,len = 20)).
-  \item kappa: Tuning parameter for roughness penalty, default is exp(seq(-10,10,len = 8)).
-  \item tau: Tuning parameter for the group bridge penalty, default is exp(seq(-50,-10,len = 8)).
+  \item alphaPs: Smoothing parameter for the Penalized B-splines method, default is 10^(-10:0).
+  \item kappa: Tuning parameter for roughness penalty, default is 10^(-(9:7)).
+  \item tau: Tuning parameter for the group bridge penalty, default is exp(seq(-50,-15,len = 20)).
   \item gamma: Real number, default is 0.5.
   \item niter: Integer, maximum number of iterations, default is 100.
 }}

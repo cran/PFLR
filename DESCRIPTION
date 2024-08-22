@@ -1,7 +1,7 @@
 Package: PFLR
 Type: Package
 Title: Estimating Penalized Functional Linear Regression
-Version: 1.0.0
+Version: 1.1.0
 Authors@R: 
   c(person(given = "Tianyu",
            family = "Guan",
@@ -27,7 +27,7 @@ Encoding: UTF-8
 Imports: fda, MASS, flare, psych, glmnet, stats, utils
 RoxygenNote: 7.3.1
 NeedsCompilation: no
-Packaged: 2024-07-27 16:58:28 UTC; shl20
+Packaged: 2024-08-21 19:50:05 UTC; shl20
 Depends: R (>= 3.5.0)
 Author: Tianyu Guan [aut],
   Haolun Shi [aut, cre, cph],
@@ -35,4 +35,4 @@ Author: Tianyu Guan [aut],
   Zhenhua Lin [aut]
 Maintainer: Haolun Shi <shl2003@connect.hku.hk>
 Repository: CRAN
-Date/Publication: 2024-07-30 13:20:09 UTC
+Date/Publication: 2024-08-22 06:30:09 UTC

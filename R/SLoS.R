@@ -18,8 +18,8 @@
 #' @param extra List of parameters which have default values:
 #'              \itemize{
 #'                \item Maxiter: Maximum number of iterations for convergence of beta, default is 100.
-#'                \item lambda: Positive number, tuning parameter for fSCAD penalty, default is exp(seq(-30,0, length.out = 10)).
-#'                \item gamma: Positive number, tuning parameter for the roughness penalty, default is 10^(-10:10).
+#'                \item lambda: Positive number, tuning parameter for fSCAD penalty, default is exp(seq(-20,-12, length.out = 10)).
+#'                \item gamma: Positive number, tuning parameter for the roughness penalty, default is 10^(-9:0).
 #'                \item absTol: Number, if max(norm(bHat)) is smaller than absTol, we stop another iteration, default is 10^(-10).
 #'                \item Cutoff: Number, if bHat is smaller than Cutoff, set it to zero to avoid being numerically unstable, default is 10^(-6).
 #'              }
@@ -70,7 +70,7 @@
 #' slosfit = SLoS(Y=Y[1:n,1],(X[1:n,,1]),M=M,d=d,domain=domain,extra=extra)
 #'
 #'
-SLoS = function(Y,X,M,d,domain,extra=list(Maxiter=100,lambda=exp(seq(-30,0,length.out=10)),gamma=10^(-10:10),absTol=10^(-10),Cutoff=10^(-6)))
+SLoS = function(Y,X,M,d,domain,extra=list(Maxiter=100,lambda=exp(seq(-20,-12, length.out = 10)),gamma=10^(-9:0),absTol=10^(-10),Cutoff=10^(-6)))
 {
  X = t(X)
   if (is.null(extra$Maxiter)) {

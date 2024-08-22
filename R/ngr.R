@@ -17,9 +17,9 @@
 #' @param domain The range over which the function X(t) is evaluated and the coefficient function \eqn{\beta}(t) is expanded by the B-spline basis functions.
 #' @param extra List containing other parameters which have defaults:
 #'              \itemize{
-#'                \item alphaPs: Smoothing parameter for the Penalized B-splines method, default is exp(seq(-20,20,len = 20)).
-#'                \item kappa: Tuning parameter for roughness penalty, default is exp(seq(-10,10,len = 8)).
-#'                \item tau: Tuning parameter for the group bridge penalty, default is exp(seq(-50,-10,len = 8)).
+#'                \item alphaPs: Smoothing parameter for the Penalized B-splines method, default is 10^(-10:0).
+#'                \item kappa: Tuning parameter for roughness penalty, default is 10^(-(9:7)).
+#'                \item tau: Tuning parameter for the group bridge penalty, default is exp(seq(-50,-15,len = 20)).
 #'                \item gamma: Real number, default is 0.5.
 #'                \item niter: Integer, maximum number of iterations, default is 100.
 #'              }
@@ -78,7 +78,7 @@
 #'
 #' ngrfit = ngr(Y=Y[1:n,1],X=(X[1:n,,1]),M,d,domain,extra= list(alphaPS=alphaPS, kappa=kappa, tau=tau))
 #'
-ngr = function(Y, X, M,d,domain, extra=list(alphaPS=exp(seq(-20,20,len = 20)), kappa=exp(seq(-10,10,len = 8)), tau=exp(seq(-50,-10,len = 8)), gamma=0.5,niter=100))
+ngr = function(Y, X, M,d,domain, extra=list(alphaPS=10^(-10:0), kappa=10^(-(9:7)), tau=exp(seq(-50,-15,len = 20)), gamma=0.5,niter=100))
 {
   p = dim(X)[2]
   norder   = d+1
